@@ -5,15 +5,15 @@
 # Display the result summary of the 10 operations (ex 9/10)
 
 """
-On this program I will now use elif statement instead of if-else to reduce the program lines. 
-Random and Time modules were also used in this program. 
+On this program I will now use elif statement instead of if-else to reduce the number of program lines. 
+Random incuding randrange (which is in the random library) and Time modules were used in this program. 
 """
 from random import randrange 
 import time
 
 # Initial item number of the quiz.
 itemNo = 1
-# Max given items which is 10.
+# Max given items (which is 10)
 itemMax = 10
 # Essential (global) scoring variables 
 rAnswers = 0    # r = (Right)Answers
@@ -24,10 +24,10 @@ while itemNo <= itemMax:
     # Two variables that generates two rando numbers to be add
     random_num1 = randrange(0,99)
     random_num2 = randrange(0,99)
-
-    sum = random_num1 + random_num2 # Add the two random numbers and store on a variable
+    sum = random_num1 + random_num2 # Adds the two random numbers and store on a variable
+    
     # print the questioning statement that will facilitate the entire Addition quiz.
-    print(f"\n[Item no.{itemNo} out of {itemMax} questions]\n>>> {random_num1} + {random_num2} is equal to what number?\n")
+    print(f"\n[Item No.{itemNo}]\n{random_num1} + {random_num2} is equal to what number?\n")
     answer_input = input("<Enter your answer here>\nMy answer is: ")    # user input stored in a variable
     """
     The 'time.sleep()' functionality serves as the transition per questions.
@@ -48,4 +48,13 @@ while itemNo <= itemMax:
                 time.sleep(1)
                 print("\n[NEXT QUESTION AHEAD]")
                 time.sleep(2)
-                
+if rAnswers >= 10 and xAnswers == 0:
+    print(f"\nIn total, you got {rAnswers} correct answers and {xAnswers} wrong answers.\nCongratulations for completinng the Addition Quiz!\n")
+elif rAnswers >= 6 or rAnswers == 9 and xAnswers >= 1:
+    print(f"\nIn total, you got {rAnswers} correct answers and {xAnswers} wrong answers.\nCongratulations for completinng the Addition Quiz!\n")
+elif rAnswers >= 3 or rAnswers == 5 and xAnswers >= 1:
+    print(f"\nIn total, you got {rAnswers} correct answers and {xAnswers} wrong answers.\nCongratulations for completinng the Addition Quiz!\n")
+elif rAnswers == 0 and rAnswers >= 1:
+    print(f"\nIn total, you got {rAnswers} correct answers and {xAnswers} wrong answers.\nCongratulations for completinng the Addition Quiz!\n")
+
+print("Thank you for your participation! Have a great day!")
