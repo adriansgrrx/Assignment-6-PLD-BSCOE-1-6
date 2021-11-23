@@ -11,6 +11,17 @@ Random incuding randrange (which is in the random library) and Time modules were
 from random import randrange 
 import time
 
+#Greetings
+print("\nWelcome to Addition Quiz! A quiz for every math wizards!")
+time.sleep(2)
+
+# system-user communication section
+name = input("\nHey there!\nPlease enter your name first to take part of the Addition Quiz:\nName: ")
+print(f"\nGreat! Let's proceeed now {name.title()}!")
+time.sleep(1)
+print("\n[PLEASE BE READY...]")
+time.sleep(3)
+
 # Initial item number of the quiz.
 itemNo = 1
 # Max given items (which is 10)
@@ -49,12 +60,14 @@ while itemNo <= itemMax:
                 print("\n[NEXT QUESTION AHEAD]")
                 time.sleep(2)
 if rAnswers >= 10 and xAnswers == 0:
-    print(f"\nIn total, you got {rAnswers} correct answers and {xAnswers} wrong answers.\nCongratulations for completinng the Addition Quiz!\n")
+    print(f"\nIn total, you got {rAnswers} correct answers and {xAnswers} wrong answers.\nWOW! You've got a perfect score!\n")
 elif rAnswers >= 6 or rAnswers == 9 and xAnswers >= 1:
-    print(f"\nIn total, you got {rAnswers} correct answers and {xAnswers} wrong answers.\nCongratulations for completinng the Addition Quiz!\n")
-elif rAnswers >= 3 or rAnswers == 5 and xAnswers >= 1:
-    print(f"\nIn total, you got {rAnswers} correct answers and {xAnswers} wrong answers.\nCongratulations for completinng the Addition Quiz!\n")
-elif rAnswers == 0 and rAnswers >= 1:
-    print(f"\nIn total, you got {rAnswers} correct answers and {xAnswers} wrong answers.\nCongratulations for completinng the Addition Quiz!\n")
+    print(f"\nIn total, you got {rAnswers} correct answers and {xAnswers} wrong answers.\nGreat!You did a really good job!\n")
+elif rAnswers >= 1 or rAnswers == 5 and xAnswers >= 1:
+    print(f"\nIn total, you got {rAnswers} correct answers and {xAnswers} wrong answers.\nNot bad, you did a good job!\n")
+elif rAnswers == 0 or rAnswers == 1:
+    print(f"\nIn total, you got {rAnswers} correct answers and {xAnswers} wrong answers.\nI'm sorry to say but, you've failed the quiz. Better luck next time!\n")
+elif rAnswers == 0 or rAnswers >= 1:
+    print(f"\nIn total, you got {rAnswers} correct answers and {xAnswers} wrong answers.\nI'm sorry to say but, you've failed the quiz. Better luck next time!\n")
 
-print("Thank you for your participation! Have a great day!")
+print(f"Thank you for your participation {name.title()}! I hope you enjoyed the quiz!\nHave a great day!\n")
